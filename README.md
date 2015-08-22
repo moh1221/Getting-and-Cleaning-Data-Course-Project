@@ -7,7 +7,13 @@ The R Script run_analysis.R do the following:
 4. Extracts the measurements on the mean and standard deviation for each measurement. 
 5. Uses descriptive activity names to name the activities in the data set
 6. Labels the data set with descriptive variable names. 
-7. create tidy data set with the average of each variable for each activity and each subject and write output to "tidy.txt".
+7. create tidy data set with the average of each variable for each activity and each subject and 
+```
+#Create tidy data set with the average of each variable for each activity and each subject
+allDS_Melt <- melt(allDS, id = c("Subject","Activity"))
+allDS_mean <- dcast(allDS_Melt, Subject + Activity ~ variable, mean)
+```
+8. write output to "tidy.txt".
 ```
 #write output to txt filte without rownames
 write.table(allDS_mean, file = "tidy.txt", row.names = FALSE)
