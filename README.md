@@ -1,5 +1,5 @@
 ## Getting and Cleaning data Course Project
-The R Script <run_analysis.R> do the following:
+The R Script `run_analysis.R` do the following:
 
 1. Download project file and unzip it.
 2. Load all data sets from unzipped file.
